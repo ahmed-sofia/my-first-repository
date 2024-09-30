@@ -1,1 +1,206 @@
-# This file is for working on the Book: Introduction to Programming with Python
+#Intro to Python
+#Using Collections:
+names = ['Karl', 'Grace', 'Clare', 'Victor',
+         'Antonina', 'Allison', 'Trevor']
+print(names.index('Clare'))   # 2
+print(names.index('Trevor'))  # 6
+print(names.index('Chris'))
+# ValueError: 'Chris' is not in list
+
+numbers = [1, 3, 6, 5, 4, 10, 1, 5, 4, 4, 5, 4]
+print(numbers.count(1))       # 2
+print(numbers.count(3))       # 1
+print(numbers.count(4))       # 4
+print(numbers.count(7))       # 0
+
+names = 'Karl Grace Clare Victor Antonina Trevor'
+print(names.index('Clare'))   # 11
+print(names.index('Trevor'))  # 33
+print(names.index('Chris'))
+# ValueError: substring not found
+
+zipped_iterables = zip(iterable1, iterable2, strict=True) #With strict=True, zip raises an exception if the iterables don't all have the same length.
+
+numbers = [1, 2]
+
+numbers.append(10)      # Append the number 10
+print(numbers)          # [1, 2, 10]
+
+numbers = [1, 2]
+
+numbers.insert(0, 8)    # Insert 8 before numbers[0]
+print(numbers)          # [8, 1, 2]
+numbers.insert(2, 6)    # Insert 6 before numbers[2]
+print(numbers)          # [8, 1, 6, 2]
+numbers.insert(100, 55) # Insert 55 before numbers[100]
+print(numbers)          # [8, 1, 6, 2, 55]
+numbers.insert(-3, 33)  # Insert 33 before the 3rd element
+                        # from the end.
+print(numbers)          # [8, 1, 33, 6, 2, 55]
+
+numbers = [1, 2]
+
+numbers.extend([7, 8])  # Append 7 and 8 to numbers
+print(numbers)          # [1, 2, 7, 8]
+
+my_list = [2, 4, 6, 8, 10]
+
+my_list.remove(8)
+print(my_list)            # [2, 4, 6, 10]
+
+my_list.remove(8)
+# ValueError: list.remove(x): x not in list
+
+my_list = [2, 4, 6, 8, 10]
+
+print(my_list.pop(1))         # 4
+print(my_list)                # [2, 6, 8, 10]
+
+print(my_list.pop())          # 10
+print(my_list)                # [2, 6, 8]
+
+print(my_list.pop(4))
+# IndexError: pop index out of range
+
+my_list = [2, 4, 6, 8, 10]
+
+my_list.clear()
+print(my_list)                # []
+
+names = ('Grace', 'Clare', 'Allison', 'Trevor')
+print(sorted(names))
+# ['Allison', 'Clare', 'Grace', 'Trevor']
+
+print(names)
+# ('Grace', 'Clare', 'Allison', 'Trevor')
+
+names = list(names)
+print(names)
+# ['Grace', 'Clare', 'Allison', 'Trevor']
+
+print(names.sort())   # None
+print(names)
+# ['Allison', 'Clare', 'Grace', 'Trevor']
+
+names = ('Grace', 'Clare', 'Allison', 'Trevor')
+print(sorted(names))
+# ['Allison', 'Clare', 'Grace', 'Trevor']
+
+print(names)
+# ('Grace', 'Clare', 'Allison', 'Trevor')
+
+names = list(names)
+print(names)
+# ['Grace', 'Clare', 'Allison', 'Trevor']
+
+print(names.sort())   # None
+print(names)
+# ['Allison', 'Clare', 'Grace', 'Trevor']
+
+names = ['Grace', 'Clare', 'Allison', 'Trevor']
+print(sorted(names, reverse=True))
+# ['Trevor', 'Grace', 'Clare', 'Allison']
+
+names.sort(reverse=True)
+print(names) # ['Trevor', 'Grace', 'Clare', 'Allison']
+
+
+print("what's up?".capitalize())        # What's up?
+print('456ABC'.capitalize())            # 456abc
+
+print("What's up?".swapcase())          # wHAT'S UP?
+print('456ABC'.swapcase())              # 456abc
+print('456ABC'.swapcase().swapcase())   # 456ABC
+
+'Hello'.isalpha()      # True
+'Good-bye'.isalpha()   # False: `-` is not a letter
+'Four score'.isalpha() # False: space is not a letter
+''.isalpha()           # False
+
+
+'12340'.isdigit()      # True
+'123.4'.isdigit()      # False: `.` is not a digit
+'-1234'.isdigit()      # False: `-` is not a digit
+''.isdigit()           # False
+
+text = ' \t  abc def    \n\r'
+print(repr(text.strip('abc'))) # ' \t  abc def    \n\r'
+
+text = 'aaabaacccabxyzabccba'
+print(text.strip('a'))         # baacccabxyzabccb
+print(text.strip('ab'))        # cccabxyzabcc
+print(text.strip('ba'))        # cccabxyzabcc
+print(text.strip('abc'))       # xyz
+print(text.strip('bc'))        # aaabaacccabxyzabccba
+
+print(repr(text.strip('abcxyz'))) # ''
+
+text = 'aaabaacccabxyzabccba'
+
+print(text.lstrip('a'))       # baacccabxyzabccba
+print(text.rstrip('a'))       # aaabaacccabxyzabccb
+
+print(text.lstrip('ab'))      # cccabxyzabccba
+print(text.rstrip('ab'))      # aaabaacccabxyzabcc
+
+print(text.lstrip('ba'))      # cccabxyzabccba
+print(text.rstrip('ba'))      # aaabaacccabxyzabcc
+
+print(text.lstrip('abc'))     # xyzabccba
+print(text.rstrip('abc'))     # aaabaacccabxyz
+
+text = '  Four     score and   seven years ago.   '
+print(text.split())
+# ['Four', 'score', 'and', 'seven', 'years', 'ago.']
+
+print('no-spaces'.split()) # ['no-spaces']
+
+text = '''
+You were lucky to have a room. We used to have to
+live in a corridor.
+Oh we used to dream of livin' in a corridor!
+Woulda' been a palace to us. We used to live in an
+old water tank on a rubbish tip. We got woken up
+every morning by having a load of rotting fish
+dumped all over us.
+'''
+
+print(text.strip().splitlines())
+# Pretty printed for clarity
+[
+    "You were lucky to have a room. We used to have to",
+    "live in a corridor.",
+    "Oh we used to dream of livin' in a corridor!",
+    "Woulda' been a palace to us. We used to live in an",
+    "old water tank on a rubbish tip. We got woken up",
+    "every morning by having a load of rotting fish",
+    "dumped all over us."
+]
+
+school = 'launch school'
+
+print(school.find(' '))       # 6
+print(school.find('l'))       # 0
+print(school.find('h'))       # 5
+print(school.find('hoo'))     # 9
+print(school.find('x'))       # -1
+print(school.find('N'))       # -1
+
+print(school.rfind(' '))      # 6
+print(school.rfind('l'))      # 12
+print(school.rfind('h'))      # 9
+print(school.rfind('hoo'))    # 9
+print(school.rfind('oh'))     # -1
+print(school.rfind('N'))      # -1
+
+
+deck = [
+    { 'suit': 'Clubs', 'value': '2' },
+    { 'suit': 'Clubs', 'value': '3' },
+    { 'suit': 'Clubs', 'value': '4' },
+        ...
+    { 'suit': 'Spades', 'value': 'Queen' },
+    { 'suit': 'Spades', 'value': 'King' },
+    { 'suit': 'Spades', 'value': 'Ace' },
+]print(f"{deck[49]['value']} of {deck[49]['suit']}")
+# Queen of Spades
